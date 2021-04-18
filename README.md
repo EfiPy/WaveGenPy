@@ -51,7 +51,7 @@ optional arguments:
 ```
 python3 SampleTone.py -c 4 -w sine
 ```
-![SampleToneBasic](./Screenshot/SampleToneBasic.png)
+![SampleToneBasic](https://github.com/EfiPy/WaveGenPy/blob/master/Screenshot/SampleToneBasic.png?raw=true)
 ### Generate wav file, each channel has different wave form  
 ```
 python3 SampleTone.py -W sine square triangle sawtooth dc -f 30 -t 0.3 -v 70
@@ -62,17 +62,17 @@ Resilution: 16 bits
 Length: 0.3 second.  
 Amplitude: 70 of 100  
 Wave frequency: 30Hz  
-![SampleToneWave](./Screenshot/SampleToneWave.png)
+![SampleToneWave](https://github.com/EfiPy/WaveGenPy/blob/master/Screenshot/SampleToneWave.png?raw=true)
 ### Generate wav file, each channel has different phase  
 ```
 python3 SampleTone.py -w sine -P -270 -180 -90 0 90 180 270 -f 30 -t 0.3 -v 70
 ```
 Phase: -270, -180, -90, 0, 90, 180, 270
-![SampleTonePhase](./Screenshot/SampleTonePhase.png)
+![SampleTonePhase](https://github.com/EfiPy/WaveGenPy/blob/master/Screenshot/SampleTonePhase.png?raw=true)
 ## SampleSquareFourier.py uses InSquareFourier.py plu-in.  
 ### Produce squrewave from fourier series  
 ```
 python3 SampleSquareFourier.py -f 30 -t 0.3 -v 70 -W SF1 SF2 SF3 SF4 SF5 SF30
 ```
 squrewave by fourier series with N = 1, 2, 3, 30  
-![SampleSquareFourier](./Screenshot/SampleSquareFourier.png)
+![SampleSquareFourier](https://github.com/EfiPy/WaveGenPy/blob/master/Screenshot/SampleSquareFourier.png?raw=true)

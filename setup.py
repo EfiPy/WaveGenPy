@@ -3,11 +3,12 @@ import pathlib
 
 here = pathlib.Path(__file__).parent.resolve()
 
-long_description = (here / 'README.md').read_text(encoding='utf-8')
+with open("README.md", "r") as fh:
+    long_description = fh.read()
 
 setup(
     name='WaveGenPy',
-    version='0.0.1',
+    version='0.1.0',
     description='Wave file generator',
     long_description=long_description,
     long_description_content_type='text/markdown',
@@ -19,7 +20,6 @@ setup(
         'Development Status :: 3 - Alpha',
         'Operating System :: POSIX',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
