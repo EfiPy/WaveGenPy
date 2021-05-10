@@ -1,6 +1,7 @@
 __pycache__/
 dist/
 src/WaveGenPy.egg-info/
+build/
 *.wav
 *.bak
 *.swp

@@ -4,10 +4,10 @@
 
 import WaveGenPy.InSquareFourier as InSquareFourier
 
-import WaveGenPy.WavePara as WavePara
+import WaveGenPy.ParaBase as Parameter
 
-para = WavePara.Get (InSquareFourier.WavformName)
-WavePara.Dump (para)
+para = Parameter.Get (InSquareFourier.WavformName)
+Parameter.Dump (para)
 
 import WaveGenPy.WaveGenEngine as WaveGenEngine
 from WaveGenPy.OutWaveFunc    import WavPackDict

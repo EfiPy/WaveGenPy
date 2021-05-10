@@ -4,10 +4,10 @@
 
 import WaveGenPy.InToneFunc as InToneFunc
 
-import WaveGenPy.WavePara as WavePara
+import WaveGenPy.ParaBase as Parameter
 
-para = WavePara.Get (InToneFunc.WavformName)
-WavePara.Dump (para)
+para = Parameter.Get (InToneFunc.WavformName)
+Parameter.Dump (para)
 
 import WaveGenPy.WaveGenEngine as WaveGenEngine
 from WaveGenPy.OutWaveFunc    import WavPackDict
