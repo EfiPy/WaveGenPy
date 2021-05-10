@@ -4,7 +4,7 @@
 
 import WaveGenPy.InSquareFourier as InSquareFourier
 
-import WaveGenPy.ParaBase as Parameter
+import WaveGenPy.ParaCli as Parameter
 
 para = Parameter.Get (InSquareFourier.WavformName)
 Parameter.Dump (para)

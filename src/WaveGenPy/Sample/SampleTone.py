@@ -4,7 +4,7 @@
 
 import WaveGenPy.InToneFunc as InToneFunc
 
-import WaveGenPy.ParaBase as Parameter
+import WaveGenPy.ParaCli as Parameter
 
 para = Parameter.Get (InToneFunc.WavformName)
 Parameter.Dump (para)
