@@ -7,10 +7,11 @@ class Tone:
                   WavInfo     = ('WaveGenEngine.wav', 3.0, 48000, 16),
                   ChannelInfo = ((None, 1000, 100, 0),),
                   WavformDict = None,
-                  WavPackDict = None
+                  WavPackDict = None,
+                  WavPackOp   = None
                   ):
 
-        (Self.Output,
+        (Self.OutName,
          Self.NumSeconds,
          Self.SampleRate,
          Self.Resolution,
@@ -24,9 +25,10 @@ class Tone:
         Self.ChannelNum  = len (Self.ChannelInfo)
 
         Self.PackFunc   = WavPackDict[Self.Resolution]
+        Self.PackOp     = WavPackOp
 
         Self.Info = {
-            'Output'    : Self.Output,
+            'OutName'   : Self.OutName,
             'NumSeconds': Self.NumSeconds,
             'SampleRate': Self.SampleRate,
             'Resolution': Self.Resolution,
@@ -45,15 +47,11 @@ class Tone:
 
     __repr__ = __str__
 
-    def Generate (Self, Output = None):
+    def Generate (Self, OutName = None):
 
-        import wave
-        fName = Output if Output != None else Self.Output
-        file = wave.open(fName,'wb')
+        fName = OutName if OutName != None else Self.OutName
 
-        file.setnchannels(Self.ChannelNum)
-        file.setsampwidth(Self.Resolution // 8) 
-        file.setframerate(Self.SampleRate)
+        Output = Self.PackOp (fName, Self.ChannelNum, Self.Resolution, Self.SampleRate)
 
         for i in range(int(Self.NumSeconds * Self.SampleRate)):
 
@@ -62,6 +60,6 @@ class Tone:
             for WavformGen, Frequency, Volume, Phase in Self.ChannelInfo:
                 data += WavformGen (i, Self.SampleRate, (Frequency, Volume, Phase), Self.PackFunc)
 
-            file.writeframesraw(data)
+            Output.Save (data)
 
-        file.close()
+        Output.Close ()
